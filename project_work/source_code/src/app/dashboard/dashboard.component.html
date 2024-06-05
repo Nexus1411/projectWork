@@ -1,0 +1,38 @@
+<table *ngIf="checkAuth">
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Actions</th>
+  </tr>
+  <tr *ngFor="let item of data">
+    <td>{{ item.id }}</td>
+    <td>{{ item.name }}</td>
+    <td>{{ item.email }}</td>
+    <td>
+      <button (click)="edit(item.id)">Edit</button>
+      <button (click)="deleteRecord(item.id)">Delete</button>
+    </td>
+  </tr>
+</table>
+<hr>
+<form *ngIf="checkAuth">
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name" [(ngModel)]="newRecord.name">
+  <br>
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" [(ngModel)]="newRecord.email">
+  <br>
+  <button (click)="addRecord()">Add</button>
+</form>
+<hr>
+<form *ngIf="editRecord.length">
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name" [(ngModel)]="editRecord[0].name">
+  <br>
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" [(ngModel)]="editRecord[0].email">
+  <br>
+  <button (click)="editRecord = {}">Cancel</button>
+  <button (click)="saveEditRecord(editRecord[0].id)">Save</button>
+</form>

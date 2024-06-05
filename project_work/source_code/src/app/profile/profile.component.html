@@ -1,0 +1,6 @@
+<div class="row">
+    <div class="col-xs-12">
+        <p *ngIf="data">User Data- <br>{{"email- " + data["email"]}} <br> {{"registered- " + data["registered"]}}</p>
+        <p *ngIf="!data">No user data available</p>
+    </div>
+</div>

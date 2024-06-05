@@ -1,0 +1,11 @@
+{
+    "/api": {
+      "target": "https://my-json-server.typicode.com/Nexus1411/-Nexus1411-loginApp-/",
+      "secure": false,
+      "changeOrigin": true,
+      "pathRewrite": {
+        "^/api": ""
+      }
+    }
+  }
+  
